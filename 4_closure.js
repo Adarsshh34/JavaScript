@@ -18,3 +18,24 @@ ad(6);
 // and 
 // c and a ko access kar pana usse bolte hai lexical scope
 
+//  2nd Example
+
+let sum = (a,b,c)=>{
+    
+    
+    
+    return {
+        gettwo: function(){
+            return a+b;
+        },
+        getthree: function(){
+            return a+b+c;
+        }
+    }
+}
+
+let ans = sum(1,2,3);
+
+console.log(ans.gettwo())
+console.log(ans.getthree())
+
