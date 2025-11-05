@@ -43,3 +43,18 @@ let emp4 ={
 
 getDetails.call(emp3); 
 getDetails.call(emp4); 
+
+
+// Apply
+apply()
+getDetails.apply(emp3,['mumbai','india']); 
+// Purpose: Very similar to call(), but you pass the arguments as an array (or array-like object).
+
+
+// 3. bind()
+
+// Purpose: Returns a new function with a permanently bound this value and optional preset arguments.
+// It does not call the function immediately.
+
+let ab = getDetails.bind(emp3,['mumbai','india']); 
+ab()
