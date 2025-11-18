@@ -37,3 +37,16 @@ function getInfo(obj){
 let ad = getInfo(obj);
 console.log(ad('name'));
 console.log(ad('age'));
+
+// Infinite curring
+// interviwer ask to find ans of add(1)(2)(3).....
+
+function addNum(a){
+    return function(b){
+        if(b) return addNum(a+b);
+        else return a;
+    }
+}
+
+
+console.log(addNum(1)(2)(3)(4)())
