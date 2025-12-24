@@ -1,4 +1,7 @@
+A callback function is a function that is passed as an argument to another function 
+and is executed at a later time, typically after some operation completes.
 
+    
 const data = [
     {name:"Adarsh", prof:"SE"},
     {name:"sneha", prof:"mba"}
