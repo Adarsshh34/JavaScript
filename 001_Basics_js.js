@@ -17,7 +17,7 @@ Type Conversion :  data type of the variables is converted from one type to anot
 Ex. let s = "123";
     let n = Number(s);
     
-Type Coercion :  data type to another by JavaScript during operations. This is also known as implicit type casting.
+Type Coercion : converting data type to another data type by JavaScript during operations. This is also known as implicit type casting.
 
 Ex. let n = 5;
     let s = "5";
@@ -48,6 +48,7 @@ Falsy -> falsy values are values that evaluate to false
 
 undefined -> Uninitialized Variables, Missing Function Return, Non-Existent Object.
 null -> Indicate "No Value", Reset or Clear Variables
+NaN ->  dividing zero by zero, or attempting to multiply a number by a string
 
 
 
