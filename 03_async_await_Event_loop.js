@@ -62,6 +62,16 @@ async function start(){
 }
 start();
 
+# Event loop -> Event loop explains how JS handles async tasks even though it is single-threaded.
+    The event loop continuously checks the call stack and task queues and decides when to push async callbacks back onto the call stack.
+    Event loop is scheduler that moves tasks to the call stack.
+    Q: why need one call stack ? JS has only one call stack, long task block ui so event loop enables non-blocking async execution
+
+Event Loop Rule 
+When the call stack is empty:
+1️⃣ Execute ALL microtasks
+2️⃣ Execute ONE macrotask
+3️⃣ Repeat forever
 
 
 
