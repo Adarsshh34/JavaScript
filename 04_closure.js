@@ -1,5 +1,5 @@
+Closure -> A closure is a function that retains access to its outer function's variables, even after the outer function has finished executing.
 
-// closure
 let add =(a)=>{              // a is lexical scope for return function
     console.log("Hello");
     let c = 4;          // lexcial scope for return function
@@ -35,6 +35,20 @@ let sum = (a,b,c)=>{
 }
 
 let ans = sum(1,2,3);
+
+
+
+function Counter(){
+    let count = 0;
+    return function(){
+        count = count +1;
+        return count;
+    }
+}
+let increment = Counter();
+console.log(increment())
+console.log(increment())
+console.log(increment())
 
 console.log(ans.gettwo())
 console.log(ans.getthree())
