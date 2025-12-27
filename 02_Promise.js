@@ -1,5 +1,5 @@
 A Promise in JavaScript is an object that represents the eventual result of an asynchronous operation
-Before Promises, we relied heavily on callbacks for async operations, which often led to 'callback hell' 
+Before Promises, we relied heavily on callbacks for async operations, which often led to 'callback hell'  i.e pyramid of doom
     - deeply nested code that was hard to read and maintain. 
     Promises provide a cleaner, more readable way to handle asynchronous operations using .then() and .catch()
 
