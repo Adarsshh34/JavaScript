@@ -31,8 +31,9 @@ let emp3 ={
     age:24,
     
 }
-function getDetails(){
+function getDetails(city, country){
     console.log(this);
+    console.log(`${city} in ${country}`)
 }
 
 let emp4 ={
@@ -49,12 +50,14 @@ getDetails.call(emp4);
 apply()
 getDetails.apply(emp3,['mumbai','india']); 
 // Purpose: Very similar to call(), but you pass the arguments as an array (or array-like object).
+// only difference is here we pass arguments in list
 
 
 // 3. bind()
 
 // Purpose: Returns a new function with a permanently bound this value and optional preset arguments.
 // It does not call the function immediately.
+// also we don't provide list in bind() 
 
-let ab = getDetails.bind(emp3,['mumbai','india']); 
+let ab = getDetails.bind(emp3,'mumbai','india'); 
 ab()
