@@ -1,4 +1,4 @@
-// Curring function
+Curring function -> Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.
 
 // curring function with closure
 function Add(a){
@@ -38,8 +38,15 @@ let ad = getInfo(obj);
 console.log(ad('name'));
 console.log(ad('age'));
 
+Using Curring we can do 
+let ab = getInfo(obj)('name');
+let ac = getInfo(obj)('age');
+
+console.log(ab);
+console.log(ac);    
+
 // Infinite curring
-// interviwer ask to find ans of add(1)(2)(3).....
+// interviwer ask to find ans of add(1)(2)(3).....()
 
 function addNum(a){
     return function(b){
