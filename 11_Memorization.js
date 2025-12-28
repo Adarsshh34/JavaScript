@@ -38,3 +38,4 @@ console.time()
 console.log(effe(50));
 console.timeEnd()
 
+Memoization is a performance optimization technique that stores the results of function calls so repeated calls with the same inputs return cached results instead of recomputing.
