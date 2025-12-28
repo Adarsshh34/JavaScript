@@ -12,19 +12,20 @@ const obj = new Object({
 
 console.log(obj.hasOwnProperty('name'))
 
-// const obj1 = new obj();
+const obj1 = new obj();
 
-// const obj2 = {
-//     name:"Adarsh"
-// }
+const obj2 = {
+    name:"Adarsh"
+}
 
-// Prototype : are the set of set of method/properties which is by default given by javascript to every object 
-// method like: ..hasOwnProperty(), .toString ...etc
+Prototype : are the set of method/properties which is by default given by javascript to every object 
+method like: .hasOwnProperty(), .toString ...etc
 
 const obj2 = {
     rollno:2,
     // name:"Sneha",
-    __proto__:obj // by doing this we can make obj properties and methods as obj2 prototype methods i.e it act as a by default method of obj
+    __proto__:obj // by doing this we can make obj properties and methods as obj2 prototype methods i.e it act as a by default method of obj.
+                 // its like inheritance, where parent is obj and child is obj2.
 }
 
 obj2.getName()
