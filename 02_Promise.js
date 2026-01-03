@@ -36,7 +36,7 @@ let addData = (pname, pprof) =>{
     
 }
 
-addData("raj","SF",getData).then(getData).catch(err => console.log(err));
+addData("raj","SF").then(getData).catch(err => console.log(err));
 
 1️⃣ Promise.all() -> Resolves when ALL promises resolve, Rejects immediately if ANY promise rejects.
     const p1 = Promise.resolve(10);
