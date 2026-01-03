@@ -4,8 +4,8 @@ document.querySelector(".btn");
 document.querySelectorAll("li");
 
 Event bubbling, capturing, delegation
-Event Bubbling (Default behavior) -> Event starts from the target element and moves up to parent → document
-Event Capturing (Trickling) -> Event starts from document → parent → child (Capturing phase is disabled by default)
+Event Bubbling (Default behavior) -> Event starts from the target element and moves up to parent → document (child to parent)
+Event Capturing (Trickling) -> Event starts from document → parent → child (Capturing phase is disabled by default) (parent to child)
 Event Delegation -> Event delegation is a technique where you attach a single event listener to a parent element instead of multiple child elements, and handle child events using event bubbling.
 
 To stop bubbling -> e.stopPropagation();
