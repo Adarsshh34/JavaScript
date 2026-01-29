@@ -58,6 +58,30 @@ Question need to see
 how to attend authorization like different profile
 admin has different authorization user has different authorization 
 Payload : {"sub": "adarsh","role": "ADMIN","iat": 1700000000,"exp": 1700003600 } 
-how we store role in jwt payload and how we access it
-how we enforces authorization from UI or BE ? which is best way
-like Admin can only access admin panel User cannot access admin panel : so where do we restrict it at ui or be
+* JWT payload is taken out by BE using below code
+---------------------------------------------------------
+private Claims extractAllClaims(String token) {
+        return Jwts.parser()
+                .verifyWith(getKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+    }
+--------------------------------------------------------
+* JWT token is created by BE by below code
+---------------------------------------------------
+Map<String, Object> claims = new HashMap<>();
+claims.put("role", "ADMIN");
+String token = Jwts.builder()
+        .setClaims(claims)
+        .setSubject(username)
+        .setIssuedAt(new Date())
+        .setExpiration(expiry)
+        .signWith(secretKey)
+        .compact();
+-----------------------------------------------------------
+how we enforces authorization from UI or BE ? which is best way -> BE
+like Admin can only access admin panel User cannot access admin panel : so where do we restrict it at ui or be 
+-> BE should restrict like /admin routes
+User manually types /admin in browser -> UI may redirect -> But backend still validates role from JWT -> If role ≠ ADMIN → returns 403 Forbidden
+
