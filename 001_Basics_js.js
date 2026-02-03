@@ -1,4 +1,8 @@
 // Basics
+Scope of variables
+var - Function scope
+const - block scope
+let - block scope
 
 var a = "adarsh";
 var a = "sneha"; // possible
