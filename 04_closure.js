@@ -1,5 +1,7 @@
 Closure -> A closure is a function that retains access to its outer function's variables, even after the outer function has finished executing.
 
+Closure -> function along with its lexical scope bundle together to form a closure.
+
 let add =(a)=>{              // a is lexical scope for return function
     console.log("Hello");
     let c = 4;          // lexcial scope for return function
