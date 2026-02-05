@@ -78,6 +78,8 @@ Approach 3: Based on text (NOT recommended)
 ❌ Breaks if text changes
 ❌ Bad for i18n [bad for when app is used for different lang then text would not match]
 
+
+[Refer Chapter 15 for more Details]
 LocalStorage vs SessionStorage vs Cookies
 LocalStorage -> stores data permanently in the browser (until manually cleared).
   Lifetime: Never expires
