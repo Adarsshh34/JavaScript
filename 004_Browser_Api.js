@@ -91,7 +91,7 @@ Cookies -> Small key-value data sent automatically with every HTTP request.
   Lifetime: Configurable (expires, max-age)
   Scope: Domain & path based
 
-
+[chapter 14]
 Fetch API -> Fetch API is a modern JavaScript API used to make HTTP requests (GET, POST, PUT, DELETE)
   It is promise-based
 
@@ -102,6 +102,12 @@ How CORS Blocking Actually Works (Step-by-Step)
 2️⃣ Browser sends request to server
 3️⃣ Server responds (200 OK)
 4️⃣ Browser checks response headers:
+
+Q)
+Access-Control-Allow-Origin: http://siteA.com
+but how this determine that request comes from autheticate server not any malicious server
+even malicious server can send this
+
 
 Access-Control-Allow-Origin: http://siteA.com
 
