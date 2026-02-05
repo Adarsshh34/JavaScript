@@ -1,7 +1,38 @@
 DOM manipulation
+
+selecting single element
 document.getElementById("title");
 document.querySelector(".btn");
 document.querySelectorAll("li");
+
+selecting multiple element
+document.getElementsByClassName("class")   // HTMLCollection
+document.getElementsByTagName("div")       // HTMLCollection
+document.querySelectorAll(".class")        // NodeList
+
+child-parent element traversal
+element.parentElement
+element.children
+element.firstElementChild
+element.lastElementChild
+element.nextElementSibling
+element.previousElementSibling
+
+creating element
+document.createElement("div")
+document.createTextNode("hello")
+Example :
+const div = document.createElement("div");
+const text = document.createTextNode("hello");
+div.appendChild(text);
+document.body.appendChild(div);
+
+parent.appendChild(child)  -> old method, support all browser
+parent.append(child1, child2) -> new method, not support Internet Exporer
+parent.prepend(child) -> new method
+element.insertBefore(newNode, referenceNode) -> old method, precise
+element.remove() -> new method
+parent.removeChild(child) -> old method, precise, work for all browser
 
 Event bubbling, capturing, delegation
 Event Bubbling (Default behavior) -> Event starts from the target element and moves up to parent → document (child to parent)
