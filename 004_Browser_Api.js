@@ -78,7 +78,32 @@ Approach 3: Based on text (NOT recommended)
 ❌ Breaks if text changes
 ❌ Bad for i18n [bad for when app is used for different lang then text would not match]
 
-
+# Events
+click
+dblclick
+mousedown
+mouseup
+mousemove
+mouseover
+mouseout
+mouseenter   // no bubbling
+mouseleave   // no bubbling
+contextmenu  // right click
+* Key Events
+keydown
+keyup
+keypress   // deprecated (mention this)
+* Form Event
+submit
+change //value changes AND element loses focus
+input //Fires on every value change
+focus //Fires when an element receives focus, does NOT bubble
+blur //Fires when an element loses focus e.g hide hints, does NOT bubble
+reset //Fires when a form is reset
+* clipboard events
+copy
+cut
+paste
 [Refer Chapter 15 for more Details]
 LocalStorage vs SessionStorage vs Cookies
 LocalStorage -> stores data permanently in the browser (until manually cleared).
