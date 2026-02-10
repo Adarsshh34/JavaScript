@@ -38,20 +38,39 @@ let sum = (a,b,c)=>{
 
 let ans = sum(1,2,3);
 
+# Advantages of Closures
+    Data Encapsulation (Privacy)
+    Cleaner & Modular Code
+# Disadvantages of Closures
+    Higher Memory Usage - value is not garbage collected
 
 
-function Counter(){
-    let count = 0;
-    return function(){
-        count = count +1;
-        return count;
-    }
-}
-let increment = Counter();
-console.log(increment())
-console.log(increment())
-console.log(increment())
 
-console.log(ans.gettwo())
-console.log(ans.getthree())
+// Data Encapuslation example- hiding count from other part of the code (advantages)
+                                                 some other way - functional constructor
+function counter(){                                  function ValCounter(){
+    var count = 0;                                       var count = 0;
+    return {                                             this.increment = function(){
+        increment(){                                         count++;
+            count++;                                         console.log(count);
+        },                                               },
+        getcount(){                                      this.decrement = function(){
+            return count;                                    count--;
+        },                                                    console.log(count);
+        decrement(){                                     }
+            count--;                                 }
+        }                                            fun1.increment();
+    }                                                fun1.increment();
+}                                                    fun1.decrement();
 
+var fun = counter();
+fun.increment();
+console.log(fun.getcount());
+fun.increment();
+console.log(fun.getcount());
+fun.decrement();
+console.log(fun.getcount());
+
+# How closure works under the hood
+JavaScript doesn’t “remember variables” — it remembers the lexical environment where the function was created.
+    JS stores the reference of entire lexical envirnoment in which function was defined
