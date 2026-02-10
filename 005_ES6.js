@@ -1,3 +1,20 @@
+let and const 
+arrow function
+Destructuring
+default parameter
+import/export
+promises
+for...of loop
+Symbol
+map weakmap set weakset
+Proxy
+
+
+
+
+
+
+
 Template literals
 `string text ${expression}`
 
