@@ -63,7 +63,7 @@ async function start(){
 start();
 
 # Event loop -> Event loop explains how JS handles async tasks even though it is single-threaded.
-    The event loop continuously checks the call stack and task queues and decides when to push async callbacks back onto the call stack.
+    The event loop continuously checks the call stack and task queues and decides when to push async callbacks back onto the call stack. (IMP)
     Event loop is scheduler that moves tasks to the call stack.
     Q: why need one call stack ? JS has only one call stack, long task block ui so event loop enables non-blocking async execution
 
@@ -73,8 +73,23 @@ When the call stack is empty:
 2️⃣ Execute ONE macrotask
 3️⃣ Repeat forever
 
+In JS Engine we have a single call stack -> which runs functions immediately
+suppose we want to wait for something or wait for executing script it is not possible in JS call stack : browser will freeze itself
+beacuse callstack does not have timer
+Browser has JS Engine and broweser has everything like localstorage, timer, url, ui, bluetooth, geo locatin
+-------------------------------
+| Browser                     |                      to access all those things we need WebApis
+|                             |                        - setTimeout
+|   ------------              |                        - DOM API
+|  |JS Engine  |              |                        - local storage
+|   ------------              |                        - console
+|-----------------------------|                        - location
+                                        Web Api - wraps up all these power into window object and gave it to the JS Engine
 
-
+Microtask queue holds    Macrotask queue holds
+- promise callback         - Timers
+- MutationObserver         - DOM Events
+                           - Net callback
 
 
 
