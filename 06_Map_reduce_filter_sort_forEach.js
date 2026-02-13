@@ -43,3 +43,39 @@ let c = companies.reduce((total, comp)=>{
     return  total + comp.year;
 },0);
 console.log(c);
+
+const users =[
+    {name:"adarsh",age:20},
+    {name:"sneha",age:20},
+    {name:"raj",age:15}
+    ];
+
+// Example 2
+const users =[
+    {name:"adarsh",age:20},
+    {name:"sneha",age:20},
+    {name:"raj",age:19}
+    ];
+    
+const ans = users.reduce((list, curr)=>{
+    if(list[curr.age]){
+        list[curr.age] = ++list[curr.age];
+    }
+    else{
+        list[curr.age] = 1;
+    }
+    return list;
+},{})
+console.log(ans);
+
+// Function chaining
+const ans1 = users.filter((ele)=>{
+    return ele.age > 18;
+}).map((element)=>{
+    return element.name;
+})
+console.log(ans1);
+
+// Same example one liner
+const ans1 = users.filter((ele)=> ele.age > 18 ).map((element)=>element.name);
+console.log(ans1);
