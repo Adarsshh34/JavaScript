@@ -47,6 +47,20 @@ let addData = (pname, pprof, callback) =>{
 
 addData("raj","SF",getData);
 
+const cart = ["shoes","pants","kurta"]
+api.createOrder(cart,function(){
+    api.proceedToPayment(function(){
+        api.showOrderSummary(function(){
+            api.updatewallet()
+        })
+    })
+})
+Callback Hell or Pyramid on Doom
+
+Inversion of Control - loosing control of code when we are using callback
+
+
+
 
 
 
