@@ -79,3 +79,12 @@ console.log(ans1);
 // Same example one liner
 const ans1 = users.filter((ele)=> ele.age > 18 ).map((element)=>element.name);
 console.log(ans1);
+
+// Same question using reduce
+const ans2 = users.reduce((list, curr)=>{
+    if(curr.age > 18){
+        list.push(curr.name);
+    }
+    return list;
+},[]);
+console.log(ans2);
