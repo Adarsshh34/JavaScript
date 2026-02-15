@@ -26,3 +26,62 @@ function debounce(fn, delay, immediate = false) {
 }
 
 
+Another Important Example
+import { useEffect, useState } from "react";
+export default function Debouncing() {
+  const mockData = [
+    "school",
+    "school bag",
+    "school tool",
+    "laptop",
+    "latop lenovo",
+    "laptop dell",
+    "laptop mac",
+    "Watermelon",
+  ];
+  const [result, setResult] = useState(mockData);
+  const [searchText, setSearchText] = useState("");
+  const [debouncequery, setDebounceQuery] = useState(searchText);
+
+  //   implement debounce
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebounceQuery(searchText);
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [searchText]);
+
+  //   to filter data at every key stroke
+  useEffect(() => {
+    const data = mockData.filter((ele) => {
+      return ele.toLowerCase().includes(searchText.toLowerCase());
+    });
+
+    setResult(data);
+  }, [debouncequery]);
+
+  return (
+    <>
+      <div>
+        <div>Search Box</div>
+        <input
+          type="text"
+          placeholder="Search Here"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <div>
+          {result.map((ele, key) => {
+            return <p key={key}>{ele}</p>;
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
