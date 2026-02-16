@@ -65,6 +65,68 @@ addData("raj","SF").then(getData).catch(err => console.log(err));
 
 Promise Chaining : .then().then().then().catch()
 
+# Ecommerce website example
+const cart =['books', 'shoes', 'bottle'];
+
+const promise = createCart(cart);
+
+promise.then((cartid)=>{
+    console.log("cart is created with id ",cartid);
+    return cartid;
+})
+.then(function(cartid){
+    return proceedtoPayment(cartid);
+})
+.then(function(cartid){
+    console.log("payment gets successfull for cart id ",cartid);
+})
+.then(function(){
+    return orderPlaced();
+})
+.then((msg)=>{
+    console.log(msg);
+})
+.catch(function(err){
+    console.log(err);
+})
+
+function createCart(cart){
+    const pr = new Promise(function(resolve, reject){
+        if(!validateCart(cart)){
+            reject("cart is rejected");
+        }
+        
+        let cartid = 1234;
+        setTimeout(function(){
+            resolve(cartid);
+        },3000);
+    });
+    return pr;
+}
+
+function validateCart(cart){
+    return true;
+}
+function proceedtoPayment(cartid){
+    let iscartReady = false;
+    return new Promise(function(resolve,reject){
+        if(!iscartReady){
+            reject("failed while processing payments for cart ",cartid);
+        }
+        setTimeout(function(){
+            resolve(cartid);
+        },5000);
+        
+    });
+}
+function orderPlaced(){
+    return new Promise(function(resolve, reject){
+        
+        setTimeout(function(){
+            resolve("Your order is been placed");
+        },2000);
+    })
+}
 
 
 
