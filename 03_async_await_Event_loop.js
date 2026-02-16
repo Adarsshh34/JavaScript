@@ -61,7 +61,62 @@ async function start(){
     getData();
 }
 start();
+----------------------------Namaste Javascript----------------------------------------------------------------------------------------------------------
+// Async function will always return promise
+async function getdata(){
+    return "Adarsh"; // it will automatically wrap value to promise
+}
 
+const a = getdata();
+// console.log(a);
+a.then(function(ab){
+    console.log(ab);
+})
+
+const pr = new Promise((resolve, reject)=>{
+    resolve("promise is resolved");
+})
+
+async function fun(){
+    return pr;
+}
+fun().then(val => console.log(val))
+
+// Async with Await
+// before async await
+function getmydata(){
+    pr.then((msg)=> console.log(msg))
+}
+getmydata();
+
+// After async and await
+async function getmydata2(){
+    let ans = await pr; //can be used only inside async fun
+    console.log(ans);
+}
+getmydata2();
+
+************************ interview question **********************
+function fun1(){
+    console.log("ab");
+}
+async function fun2(){
+    console.log("one");
+    let ans = await new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("promise is resolve");
+        },5000);
+        
+    });
+    console.log(ans);
+    console.log("two");
+    
+}
+
+
+fun2();
+fun1();
+===========================================================================================================================================================
 # Event loop -> Event loop explains how JS handles async tasks even though it is single-threaded.
     The event loop continuously checks the call stack and task queues and decides when to push async callbacks back onto the call stack. (IMP)
     Event loop is scheduler that moves tasks to the call stack.
