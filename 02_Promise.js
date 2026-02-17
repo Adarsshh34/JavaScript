@@ -43,7 +43,7 @@ addData("raj","SF").then(getData).catch(err => console.log(err));
     const p2 = Promise.resolve(20);
     const p3 = Promise.resolve(30);
     
-    Promise.all([p1, p2, p3])
+    Promise.all([p1, p2, p3])  // it takes array of promises
       .then(result => console.log(result))
       .catch(err => console.error(err));
 
@@ -62,6 +62,12 @@ addData("raj","SF").then(getData).catch(err => console.log(err));
     Promise.race([p1, p2])
       .then(result => console.log(result));
     ANS : Fast
+3️⃣ Promise.any() -> Resolves when any one of the promise completed(resolve).
+    const p1 = Promise.resolve(10);
+    const p2 = Promise.resolve(20);
+    const p3 = Promise.resolve(30);
+
+    similiar to race but here we will wait for first resolve
 
 Promise Chaining : .then().then().then().catch()
 
