@@ -2,25 +2,8 @@ async/await is used for ASYNCHRONOUS operations, not synchronous ones.
     Async/await is a syntax in JavaScript that makes asynchronous code look and behave more like synchronous code. 
     It's built on top of Promises and makes them easier to work with.
 
-------------------------------------------------------------------------------------------------------------
-// This is ASYNCHRONOUS (non-blocking)
-async function fetchData() {
-  const result = await fetch('/api/data'); // Waits, but doesn't block
-  return result;
-}
-
-console.log('This runs immediately');
-fetchData();
-console.log('This also runs immediately, before fetch completes');
-```
-
-**Output:**
-```
-This runs immediately
-This also runs immediately, before fetch completes
-(then the fetch completes)
-
-
+async is a keyword which is used with functions and await keyword is used only inside 
+    async function to handle promises.
 -------------------------------------------------------------------------------------------------------------
 
 const data = [
@@ -37,7 +20,6 @@ let getData =()=>{
 }
 
 let addData = (pname, pprof) =>{
-    
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             data.push({name : pname, prof: pprof});
@@ -50,12 +32,7 @@ let addData = (pname, pprof) =>{
   
         },2000);
     });
-    
-    
-    
 }
-
-
 async function start(){
     await addData("raj","SF");
     getData();
@@ -95,6 +72,61 @@ async function getmydata2(){
     console.log(ans);
 }
 getmydata2();
+// async make sure functions runs asynronously and await make sure that code inside function runs sync fashion
+
+
+
+const p1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("promise 1 is resolved");
+    },5000);
+})
+
+const p2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("promise 2 is resolved");
+    },5000);
+})
+
+
+async function fun2(){
+    console.log("hello 1");
+    
+    const val1 = await p1;
+    console.log(val1);
+    
+    console.log("world");
+    
+    const val2 = await p2;
+    console.log(val2);
+}
+fun2();
+
+case 1:
+p1 - 10s
+p2 - 5s
+ans - sequence wise
+
+case 2:
+p1 - 5s
+p2 - 10s
+ans - sequence
+
+case 3:
+p1 - 5s
+p2 - 5s
+ans - sequence wise
+
+
+Deep down of aysnc awai:
+In case 1,2,3:
+when fun2() goes into the call stack it execute first line i.e console.log("hello 1") later it sees that in the next line
+    there is a await keyword with returning promise its timer is 10s it uses event loop and tracks time wait untill it get fullfilled
+    now is fun2() is suspended and removed from call stack (not blocking main thread) when p1 timer gets over i.e promise is resolve/reject
+    fun2() is bringed back to main call stack, now console.log(p1) and console.log("world") would be printed and code moved to next line
+    now there is another promise, similary this promise is taken care by event loop and fun2() would be taken out from main call stack.
+    once promise would be resolved it will be bring back to main call stack;
+
 
 ************************ interview question **********************
 function fun1(){
@@ -106,13 +138,11 @@ async function fun2(){
         setTimeout(()=>{
             resolve("promise is resolve");
         },5000);
-        
     });
     console.log(ans);
     console.log("two");
     
 }
-
 
 fun2();
 fun1();
