@@ -40,7 +40,7 @@ The === strict equality operator. It checks for equality without type conversion
 Truthy -> truthy values are values that are evaluated to be true 
   Non-zero numbers: 42, -1, 3.14
   Non-empty strings: "hello", "0", " "
-  Objects and arrays: {}, []
+  Objects and arrays: {}, [] (Note: object and array both with elements and without any element are truthy value)
   Functions: function() {}
   Dates: new Date()
   Symbols: Symbol()
