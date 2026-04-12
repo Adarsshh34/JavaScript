@@ -27,6 +27,11 @@ Ex. let n = 5;
     let s = "5";
     let res = n + s;  // JavaScript converts num to string
     // 55
+In Coercion it is important to know what will be converted to what
+Step 1: Convert Boolean → Number
+Step 2: Convert Object → Primitive
+Step 3: If String & Number → String → Number
+=> Final Conversion is usually done with Number == Number
     
     
 The == loose equality operator. It compares two values for equality after performing type coercion, meaning it converts the values to the same type before comparing them.
