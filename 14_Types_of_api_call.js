@@ -62,6 +62,25 @@ PATCH – Partial update
       Usually not strictly 
       Idempotent -> (depends on implementation)
       Think of it as -> “Change only what I mention.”
+      Example : 
+      Initial state=>
+        {
+          "id": 1,
+          "name": "Adarsh",
+          "age": 25,
+          "email": "adarsh@example.com"
+        }
+      Req =>
+      fetch("/users/1", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          age: 26
+        })
+      });
+      
 
 DELETE – Remove data
   DELETE /users/123
