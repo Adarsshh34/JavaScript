@@ -146,6 +146,10 @@ async function fun2(){
 
 fun2();
 fun1();
+
+Aysnc fun -> statement under async make sure that every statemnet in async execute in syncronous fashion
+and function mark with async execute asyncronously.
+
 ===========================================================================================================================================================
 # Event loop -> Event loop explains how JS handles async tasks even though it is single-threaded.
     The event loop continuously checks the call stack and task queues and decides when to push async callbacks back onto the call stack. (IMP)
