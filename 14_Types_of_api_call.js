@@ -42,6 +42,17 @@ PUT – Replace entire resource
       Idempotent -> (calling multiple times → same result)
   
       Think of it as -> “Here is the full new version of this resource.”
+      Example: -> put does not merge it replace entire thing.
+      fetch("/users/1", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: "Adarsh Kumar",
+          age: 26
+        })
+      });
 
 
 PATCH – Partial update 
