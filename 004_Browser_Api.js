@@ -79,6 +79,9 @@ Approach 3: Based on text (NOT recommended)
 ❌ Bad for i18n [bad for when app is used for different lang then text would not match]
 
 # Events
+
+JavaScript events are actions or occurrences that happen in the browser, such as a user clicking a button, 
+pressing a key, moving the mouse, or the page finishing loading. You can respond to these events using event listeners.
 click
 dblclick
 mousedown
