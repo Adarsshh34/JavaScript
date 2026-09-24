@@ -12,6 +12,16 @@ companies.forEach((comp)=>{
     console.log(comp)
 })
 
+// For...of
+for (const company of companies) {
+  console.log(company);
+}
+
+// For..in
+for (const index in companies) {
+  console.log(companies[index]);
+}
+
 // Filter - true/false need to be return and entire ans is retured in as list
 
 const a =companies.filter((comp)=>{
