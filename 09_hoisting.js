@@ -23,3 +23,14 @@ in case of let and const, it is been hoisted but not in global context as var, i
 
 Temporal dead zone : let and const varible are stored in temporal dead zone, it a place where let and const are stored until they are intialiazed with value
 when var is declared is stored in global object whereas let and const are stored in some other memory block not in global memory block.
+
+    case 1.
+    console.log(a);
+    let a=5;
+    ReferenceError: Cannot access 'a' before initialization
+
+    case 2.
+    console.log(a);
+    let a;
+    ReferenceError: Cannot access 'a' before initialization
+
